@@ -44,7 +44,7 @@ public class SoundMethodTests extends BaseTest {
 
     @Test
     @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 2, количество звуков - 0")
-    public void checkSoundMethodWhen0and0(){
+    public void checkSoundMethodWhen2and0(){
         //prepare
 
         HashMap<String, Object> queryParams = new HashMap<String, Object>() {{
@@ -72,7 +72,7 @@ public class SoundMethodTests extends BaseTest {
 
     @Test
     @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 0, количество звуков - 2")
-    public void checkSoundMethodWhenMinus1andMinus1(){
+    public void checkSoundMethodWhen0and2(){
         //prepare
 
         HashMap<String, Object> queryParams = new HashMap<String, Object>() {{
@@ -98,6 +98,32 @@ public class SoundMethodTests extends BaseTest {
 
     }
 
+    @Test
+    @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 2, количество звуков - 4")
+    public void checkSoundMethodWhen2and4(){
+        //prepare
 
+        HashMap<String, Object> queryParams = new HashMap<String, Object>() {{
+            put("repetitionCount", 2);
+            put("soundCount", 4);
+        }};
+        String expectedSound = "quack-quack-quack-quack, quack-quack-quack-quack";
+
+        // do
+        String actualSound = given()
+                .spec(requestSpecification)
+                .when()
+                .queryParams(queryParams)
+                .get(url)
+                .then()
+                .statusCode(HttpStatusCode.OK)
+                .extract()
+                .jsonPath()
+                .getString("sound");
+
+        // check
+        assertEquals(expectedSound, actualSound);
+
+    }
 }
 
