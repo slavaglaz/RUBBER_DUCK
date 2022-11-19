@@ -136,7 +136,7 @@ public class PropertiesMethodTests extends BaseTest {
         // check
         assertEquals(expectedColor, actualColor);
     }
-
+        //test
     @Test
     @DisplayName("Проверка цвета уточки в случае тело =  {\"1\" : 2 }")
     public void checkColorWhenMaterialIs1_2() {
