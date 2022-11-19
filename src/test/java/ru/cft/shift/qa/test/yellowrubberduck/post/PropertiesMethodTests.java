@@ -111,5 +111,55 @@ public class PropertiesMethodTests extends BaseTest {
         // check
         assertEquals(expectedColor, actualColor);
     }
+
+    @Test
+    @DisplayName("Проверка цвета уточки в случае тело не определено")
+    public void checkColorWhenMaterialIsNullBody() {
+        //prepare
+
+        String body = "{}";
+        String expectedColor = "yellow";
+
+        // do
+        String actualColor = given()
+                .spec(requestSpecification)
+                .header("Content-Type", "application/json")
+                .body(body)
+                .when()
+                .post(url)
+                .then()
+                .statusCode(HttpStatusCode.OK)
+                .extract()
+                .jsonPath()
+                .getString("color");
+
+        // check
+        assertEquals(expectedColor, actualColor);
+    }
+
+    @Test
+    @DisplayName("Проверка цвета уточки в случае тело =  {\"1\" : 2 }")
+    public void checkColorWhenMaterialIs1_2() {
+        //prepare
+
+        String body = " {\"1\" : 2 }";
+        String expectedColor = "yellow";
+
+        // do
+        String actualColor = given()
+                .spec(requestSpecification)
+                .header("Content-Type", "application/json")
+                .body(body)
+                .when()
+                .post(url)
+                .then()
+                .statusCode(HttpStatusCode.OK)
+                .extract()
+                .jsonPath()
+                .getString("color");
+
+        // check
+        assertEquals(expectedColor, actualColor);
+    }
 }
 
