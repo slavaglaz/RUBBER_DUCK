@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PropertiesMethodTests extends BaseTest {
     private static final String url = Directory.PROPERTIES.getValue();
 
-    @Test
+    @Test // Not fixed, it's working
     @DisplayName("Проверка цвета уточки в случае, если материал - резина")
     public void checkColorWhenMaterialIsRubber() {
         //prepare
@@ -37,7 +37,7 @@ public class PropertiesMethodTests extends BaseTest {
         assertEquals(expectedColor, actualColor);
     }
 
-    @Test
+    @Test // Not fixed, it's working
     @DisplayName("Проверка цвета уточки в случае, если материал - пусто")
     public void checkColorWhenMaterialIsEmpty() {
         //prepare
@@ -62,7 +62,7 @@ public class PropertiesMethodTests extends BaseTest {
         assertEquals(expectedColor, actualColor);
     }
 
-    @Test
+    @Test // Not fixed, it's working
     @DisplayName("Проверка цвета уточки в случае, если материал - металл")
     public void checkColorWhenMaterialIsMetal() {
         //prepare
@@ -87,7 +87,7 @@ public class PropertiesMethodTests extends BaseTest {
         assertEquals(expectedColor, actualColor);
     }
 
-    @Test
+    @Test // Not fixed, it's working
     @DisplayName("Проверка цвета уточки в случае материал не определен")
     public void checkColorWhenMaterialIsEmptyBody() {
         //prepare
@@ -112,7 +112,7 @@ public class PropertiesMethodTests extends BaseTest {
         assertEquals(expectedColor, actualColor);
     }
 
-    @Test
+    @Test // Not fixed, no error message
     @DisplayName("Проверка цвета уточки в случае тело не определено")
     public void checkColorWhenMaterialIsNullBody() {
         //prepare
@@ -136,8 +136,8 @@ public class PropertiesMethodTests extends BaseTest {
         // check
         assertEquals(expectedColor, actualColor);
     }
-        //test
-    @Test
+
+    @Test // Not fixed, no error message
     @DisplayName("Проверка цвета уточки в случае тело =  {\"1\" : 2 }")
     public void checkColorWhenMaterialIs1_2() {
         //prepare
