@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class FlyMethodTests extends BaseTest {
     private static final String url = Directory.FLY.getValue();
 
-    @Test
+    @Test//Fixed
     @DisplayName("Проверка метода \"Лететь\" в случае, если состояние крыльев - ACTIVE")
     public void checkFLyMethodWhenWingsAreActive() {
         //prepare
@@ -35,6 +35,8 @@ public class FlyMethodTests extends BaseTest {
         assertEquals(expectedMessage, actualMessage);
     }
 
+
+    //Fixed
     @Test
     @DisplayName("Проверка метода \"Лететь\" в случае, если состояние крыльев - FIXED")
     public void checkFLyMethodWhenWingsAreFixed() {
@@ -57,6 +59,7 @@ public class FlyMethodTests extends BaseTest {
         assertEquals(expectedMessage, actualMessage);
     }
 
+    //Fixed
     @Test
     @DisplayName("Проверка метода \"Лететь\" в случае, если состояние крыльев - empty")
     public void checkFLyMethodWhenWingsAreEmpty() {
