@@ -16,7 +16,7 @@ public class SwimMethodTests extends BaseTest {
     @DisplayName("Проверка метода \"Плыть\"")
     public void checkSwimMethod() {
         //prepare
-        String expectedMessage = "Paws are not found ((((";
+        String expectedMessage = "I'm swimming";
 
         // do
         String actualMessage = given()
@@ -24,7 +24,7 @@ public class SwimMethodTests extends BaseTest {
                 .when()
                 .get(url)
                 .then()
-                .statusCode(HttpStatusCode.NOT_FOUND)
+                .statusCode(HttpStatusCode.OK)
                 .extract()
                 .jsonPath()
                 .getString("message");

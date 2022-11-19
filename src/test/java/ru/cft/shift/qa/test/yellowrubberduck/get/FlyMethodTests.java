@@ -17,7 +17,7 @@ public class FlyMethodTests extends BaseTest {
     @DisplayName("Проверка метода \"Лететь\" в случае, если состояние крыльев - ACTIVE")
     public void checkFLyMethodWhenWingsAreActive() {
         //prepare
-        String expectedMessage = "I'm flying :)";
+        String expectedMessage = "I'm flying";
 
         // do
         String actualMessage = given()
@@ -39,7 +39,7 @@ public class FlyMethodTests extends BaseTest {
     @DisplayName("Проверка метода \"Лететь\" в случае, если состояние крыльев - FIXED")
     public void checkFLyMethodWhenWingsAreFixed() {
         //prepare
-        String expectedMessage = "I can't fly :C";
+        String expectedMessage = "I can't fly";
 
         // do
         String actualMessage = given()
@@ -58,10 +58,10 @@ public class FlyMethodTests extends BaseTest {
     }
 
     @Test
-    @DisplayName("Проверка метода \"Лететь\" в случае, если состояние крыльев - null")
-    public void checkFLyMethodWhenWingsAreNull() {
+    @DisplayName("Проверка метода \"Лететь\" в случае, если состояние крыльев - empty")
+    public void checkFLyMethodWhenWingsAreEmpty() {
         //prepare
-        String expectedMessage = "No wings detectable!";
+        String expectedMessage = "No wings detectable";
 
         // do
         String actualMessage = given()
@@ -70,7 +70,7 @@ public class FlyMethodTests extends BaseTest {
                 .queryParam("wingsState", "")
                 .get(url)
                 .then()
-                .statusCode(HttpStatusCode.INTERNAL_SERVER_ERROR)
+                .statusCode(HttpStatusCode.NOT_FOUND)
                 .extract()
                 .jsonPath()
                 .getString("message");

@@ -24,7 +24,7 @@ public class SoundMethodTests extends BaseTest {
             put("repetitionCount", 1);
             put("soundCount", 1);
         }};
-        String expectedSound = "moo";
+        String expectedSound = "quack";
 
         // do
         String actualSound = given()
@@ -43,12 +43,12 @@ public class SoundMethodTests extends BaseTest {
     }
 
     @Test
-    @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 0, количество звуков - 0")
+    @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 2, количество звуков - 0")
     public void checkSoundMethodWhen0and0(){
         //prepare
 
         HashMap<String, Object> queryParams = new HashMap<String, Object>() {{
-            put("repetitionCount", 0);
+            put("repetitionCount", 2);
             put("soundCount", 0);
         }};
         String expectedSound = "";
@@ -71,7 +71,7 @@ public class SoundMethodTests extends BaseTest {
     }
 
     @Test
-    @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - -1, количество звуков - -1")
+    @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 0, количество звуков - 2")
     public void checkSoundMethodWhenMinus1andMinus1(){
         //prepare
 
