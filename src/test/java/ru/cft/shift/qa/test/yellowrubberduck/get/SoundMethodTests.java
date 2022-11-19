@@ -76,10 +76,10 @@ public class SoundMethodTests extends BaseTest {
         //prepare
 
         HashMap<String, Object> queryParams = new HashMap<String, Object>() {{
-            put("repetitionCount", -1);
-            put("soundCount", -1);
+            put("repetitionCount", 0);
+            put("soundCount", 2);
         }};
-        String expectedSound = null;
+        String expectedSound = "";
 
         // do
         String actualSound = given()
@@ -88,7 +88,7 @@ public class SoundMethodTests extends BaseTest {
                 .queryParams(queryParams)
                 .get(url)
                 .then()
-                .statusCode(HttpStatusCode.INTERNAL_SERVER_ERROR)
+                .statusCode(HttpStatusCode.OK)
                 .extract()
                 .jsonPath()
                 .getString("sound");
