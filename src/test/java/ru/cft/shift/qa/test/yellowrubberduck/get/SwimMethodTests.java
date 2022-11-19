@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SwimMethodTests extends BaseTest {
     private static final String url = Directory.SWIM.getValue();
 
-    @Test
+    @Test //исправлено
     @DisplayName("Проверка метода \"Плыть\"")
     public void checkSwimMethod() {
         //prepare

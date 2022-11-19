@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SoundMethodTests extends BaseTest {
     private static final String url = Directory.SOUND.getValue();
 
-    @Test
+    @Test //исправлено
     @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 1, количество звуков - 1")
     public void checkSoundMethodWhen1and1() {
         //prepare
@@ -42,7 +42,7 @@ public class SoundMethodTests extends BaseTest {
         assertEquals(expectedSound, actualSound);
     }
 
-    @Test
+    @Test //исправлено
     @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 2, количество звуков - 0")
     public void checkSoundMethodWhen2and0(){
         //prepare
@@ -70,7 +70,7 @@ public class SoundMethodTests extends BaseTest {
 
     }
 
-    @Test
+    @Test //исправлено
     @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 0, количество звуков - 2")
     public void checkSoundMethodWhen0and2(){
         //prepare
@@ -98,7 +98,7 @@ public class SoundMethodTests extends BaseTest {
 
     }
 
-    @Test
+    @Test //исправлено
     @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 2, количество звуков - 4")
     public void checkSoundMethodWhen2and4(){
         //prepare
