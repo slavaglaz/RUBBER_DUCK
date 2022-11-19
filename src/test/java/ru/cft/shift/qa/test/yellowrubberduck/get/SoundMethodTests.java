@@ -42,7 +42,7 @@ public class SoundMethodTests extends BaseTest {
         assertEquals(expectedSound, actualSound);
     }
 
-    @Test //Fixed
+    @Test //not Fixed
     @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 2, количество звуков - 0")
     public void checkSoundMethodWhen2and0(){
         //prepare
@@ -70,7 +70,7 @@ public class SoundMethodTests extends BaseTest {
 
     }
 
-    @Test //Fixed
+    @Test //not Fixed
     @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 0, количество звуков - 2")
     public void checkSoundMethodWhen0and2(){
         //prepare
@@ -125,7 +125,7 @@ public class SoundMethodTests extends BaseTest {
         assertEquals(expectedSound, actualSound);
     }
 
-    @Test //Fixed
+    @Test //not Fixed
     @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - -1, количество звуков - 4")
     public void checkSoundMethodWhenMinus1and4(){
         //prepare
@@ -151,7 +151,7 @@ public class SoundMethodTests extends BaseTest {
         // check
         assertEquals(expectedSound, actualSound);
     }
-    @Test //Fixed
+    @Test //not Fixed
     @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 2, количество звуков - -1")
     public void checkSoundMethodWhen2andMinus1(){
         //prepare
