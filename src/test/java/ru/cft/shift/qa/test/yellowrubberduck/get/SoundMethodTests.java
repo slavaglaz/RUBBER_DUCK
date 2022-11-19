@@ -125,6 +125,58 @@ public class SoundMethodTests extends BaseTest {
         assertEquals(expectedSound, actualSound);
     }
 
+    @Test //Fixed
+    @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - -1, количество звуков - 4")
+    public void checkSoundMethodWhenMinus1and4(){
+        //prepare
+
+        HashMap<String, Object> queryParams = new HashMap<String, Object>() {{
+            put("repetitionCount", -1);
+            put("soundCount", 4);
+        }};
+        String expectedSound = null;
+
+        // do
+        String actualSound = given()
+                .spec(requestSpecification)
+                .when()
+                .queryParams(queryParams)
+                .get(url)
+                .then()
+                .statusCode(HttpStatusCode.INTERNAL_SERVER_ERROR)
+                .extract()
+                .jsonPath()
+                .getString("sound");
+
+        // check
+        assertEquals(expectedSound, actualSound);
+    }
+    @Test //Fixed
+    @DisplayName("Проверка метода \"Крякать\" в случае, если количество повторений - 2, количество звуков - -1")
+    public void checkSoundMethodWhen2andMinus1(){
+        //prepare
+
+        HashMap<String, Object> queryParams = new HashMap<String, Object>() {{
+            put("repetitionCount", 2);
+            put("soundCount", -1);
+        }};
+        String expectedSound = null;
+
+        // do
+        String actualSound = given()
+                .spec(requestSpecification)
+                .when()
+                .queryParams(queryParams)
+                .get(url)
+                .then()
+                .statusCode(HttpStatusCode.INTERNAL_SERVER_ERROR)
+                .extract()
+                .jsonPath()
+                .getString("sound");
+
+        // check
+        assertEquals(expectedSound, actualSound);
+    }
 
 }
 
